@@ -5,8 +5,31 @@ li:hover {
 .displayBox {
     height: 275px;
     width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-left: 4px;
+    border-right: 4px;
+    border-width: 4px;
+    border-color: rgb(60, 117, 117);
+    background-color: rgb(226, 226, 226);
+    text-align: center;
+
 }
 
+ul {
+    width:auto;
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+    padding-left: 0;
+    padding-right: 40px;
+    margin: 0;
+    width: auto;
+    text-align: center;
+}
 img {
     width: auto;
     height: 100px;
@@ -20,3 +43,7 @@ h3 {
 }
 
 /* Add a 'selected' class here to style selected astronaut names a different color. */
+.selected {
+    color: green;
+    font-weight: bold;
+}

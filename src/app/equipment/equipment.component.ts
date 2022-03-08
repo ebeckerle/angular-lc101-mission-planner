@@ -28,8 +28,13 @@ export class EquipmentComponent implements OnInit {
 
    // Code your addItem function here:
    addItem(item : object) : boolean {
-     this.cargoHold.push(item);
-     this.cargoMass += item['mass'];
-     return this.maximumAllowedMass - this.cargoMass <= 200;
+    if (!this.cargoHold.includes(item)) {
+      this.cargoHold.push(item);
+      this.cargoMass += item['mass'];
+      return this.maximumAllowedMass - this.cargoMass <= 200;
+    } else {
+      window.confirm("You already have " + item['name'] +" in the cargo hold. Please choose something else");
+    }
+    
    }
 }
