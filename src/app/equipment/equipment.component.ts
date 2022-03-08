@@ -21,6 +21,7 @@ export class EquipmentComponent implements OnInit {
    cargoMass: number = 0;
    maximumAllowedMass: number = 2000;
    maxItems: number = 10;
+   nearCapacity: boolean = false;
 
    constructor() { }
 
@@ -37,4 +38,9 @@ export class EquipmentComponent implements OnInit {
     }
     
    }
+
+   remove(equipment: string) {
+    let index = this.cargoHold.indexOf(equipment);
+    this.cargoHold.splice(index, 1);
+  }
 }

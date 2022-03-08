@@ -1,11 +1,20 @@
 .displayBox {
-    height: 275px;
+    height: auto;
     width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-left: 4px;
+    border-right: 4px;
+    border-width: 4px;
+    border-color: rgb(60, 117, 117);
+    background-color: rgb(226, 226, 226);
 }
 
 button {
     margin: 2px;
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 h3 {
@@ -18,3 +27,7 @@ h3 {
 }
 
 /* Add the 'nearMaxMass' class style here: */
+.nearMaxMass {
+    color: rgb(255, 60, 0);
+
+}
