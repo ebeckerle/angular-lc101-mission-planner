@@ -1,21 +1,26 @@
-<h3>Crew</h3>
-<ul>
-  <li *ngFor="let crewmember of crew">
+<div style="padding: 8px; background-color: rgb(204, 204, 204)">
+  <h3>Crew</h3>
+  <ul>
+    <li *ngFor="let crewmember of crew">
 
-    <span *ngIf="memberBeingEdited !== crewmember; else elseBlock">
-      <span (click)="edit(crewmember)" class="editable-text">{{crewmember.name}}</span>  
-      <span *ngIf="crewmember.firstMission">- 1st </span>
-      <button (click)="remove(crewmember)"> remove </button>
-    </span>
+      <span *ngIf="memberBeingEdited !== crewmember; else elseBlock">
+        <span (click)="edit(crewmember)" class="editable-text">{{crewmember.name}}</span>  
+        <span *ngIf="crewmember.firstMission">- 1st </span>
+        <button (click)="remove(crewmember)"> remove </button>
+      </span>
 
-    <ng-template #elseBlock>
-      <input #updatedName (keyup.enter)="save(updatedName.value, crewmember)" value="{{crewmember.name}}"/>
-      <button (click)="save(updatedName.value, crewmember)">save</button>
-    </ng-template>
+      <ng-template #elseBlock>
+        <input #updatedName (keyup.enter)="save(updatedName.value, crewmember)" value="{{crewmember.name}}"/>
+        <button (click)="save(updatedName.value, crewmember)">save</button>
+      </ng-template>
 
-  </li>
+    </li>
 
-</ul>
-<input #name type="text"/>
-<label> First mission <input #firstMission type="checkbox"/></label>
-<button (click)="add(name.value, firstMission.checked)">Add</button>
+  </ul>
+
+  <input #name type="text"/>
+  <label> First mission <input #firstMission type="checkbox"/></label>
+  <button (click)="add(name.value, firstMission.checked)">Add</button>
+</div>
+
+

@@ -1,7 +1,35 @@
-<h3>Equipment</h3>
+<div>
+  <h3>Equipment</h3>
+  <ul>
+    <li *ngFor = "let equip of equipments">
+      <span *ngIf="equipBeingEdited !== equip; else elseBlock">
+        <span class="editable-text" (click)="editEquip(equip)" >{{equip}}</span> 
+        <button (click)="removeEquip(equip)"> remove </button> 
+      </span>
+
+      <ng-template #elseBlock>
+        <input #updatedEquip (keyup.enter)="saveEquip(updatedEquip.value, equip)" value="{{equip}}"/>
+        <button (click)="saveEquip(updatedEquip.value, equip)">save</button>
+      </ng-template>
+
+    </li>
+  </ul>
+
+  <input #equipment type="text"/>
+  <button (click)="addEquip(equipment.value)">Add</button>
+</div>
+<!-- <h3>Equipment</h3>
 <ul>
   <li>Habitat dome</li>
   <li>Drones</li>
   <li>Food containers</li>
   <li>Oxygen tanks</li>
-</ul>
+</ul> -->
+
+<span *ngIf="!editingMission; else editMissionBlock">
+  <span class="editable-text" (click)="editingMission = true;">{{ missionName }}</span>
+</span>
+<ng-template #editMissionBlock>
+  <input #mission (keyup.enter)="updateMission(mission.value)" value="{{ missionName }}"/>
+  <button (click)="updateMission(mission.value)">save</button>
+</ng-template>
